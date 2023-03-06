@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reusable component */
+.button {
+    padding: 0.5rem;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+}
+
+.line {
+    height: 7px;
+    border-radius: 1.7px;
+    width: 40px;
+    background-color: #55595e;
+}

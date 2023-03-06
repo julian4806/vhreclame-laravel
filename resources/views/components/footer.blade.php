@@ -1,22 +1,17 @@
-<div class="flex flex-col gap-2 items-center bg-slate-500 shadow-inner text-white py-4 px-10">
-    <div class="copyright-text">
-        <span class="text">
-            Copyright </span>©
-        <script>
-            document.write(new Date().getFullYear());
-        </script>2023<span class="text"> All Rights Reserved
-            by</span>
-        <span class="itallic">Julian van Husen</span>.
+<footer class="p-4 sm:p-6 bg-gray-900">
+    <div class="container mx-auto px-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 Fedja van Husen</a>. All Rights
+                Reserved.
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a class="social-icon" href="mailto:julianvanhusen@gmail.com">
+                    <i class="fa-regular fa-envelope text-white"></i>
+                </a>
+                <a class="social-icon" href="mailto:julianvanhusen@gmail.com">
+                    <i class="fa-solid fa-phone text-white"></i>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="flex gap-4">
-        <a class="social-icon" href="mailto:julianvanhusen@gmail.com">
-            <img src="{{ asset('assets/img/Envelope_font_awesome.svg') }}" width="16" height="16">
-        </a>
-        <a href="https://github.com/julian4806" target="_blank" class="social-icon">
-            <img src="{{ asset('assets/img/Octicons-mark-github.svg') }}" width="16" height="16">
-        </a>
-        <a href="https://codepen.io/julian4806" target="_blank" class="social-icon">
-            <img src="{{ asset('assets/img/Font_Awesome_5_brands_codepen.svg') }}" width="16" height="16">
-        </a>
-    </div>
-</div>
+</footer>
