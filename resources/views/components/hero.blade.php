@@ -1,5 +1,6 @@
-<div class="h-60 flex bg-slate-200 items-center justify-center">
-    <div>
+<div class="h-60 flex bg-slate-200 items-center justify-center relative">
+    <img src="{{ asset('assets/img/hero.jpg') }}" class="background-image">
+    <div class="z-10 text-white bg-[#00000050] p-2 rounded-md shadow-md">
         <h2 class="text-2xl text-center">{{ $slot }}</h2>
         <h2 class="text-center">
             <a href="/" class="hover:text-red-500">

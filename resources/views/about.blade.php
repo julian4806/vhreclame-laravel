@@ -4,7 +4,7 @@
         <x-hero>Over Ons</x-hero>
 
         {{-- hero --}}
-        <div class="p-6 flex gap-6">
+        <div class="p-6 flex gap-6 bg-slate-300">
             <div class="w-[60%] flex flex-col gap-4">
                 <h2>Een familiebedrijf uit Utrecht</h2>
                 <div class="line"></div>
@@ -27,11 +27,11 @@
 
         {{-- cards --}}
         <div class="flex flex-col">
-            <div class="text-center">
-                <h2>Waarom VH Reclame</h2>
+            <div class="text-center mt-8">
+                <h2 class="text-2xl">Waarom VH Reclame</h2>
             </div>
-            <div>
-                <div>
+            <div class="flex justify-around px-6 gap-6 mt-8">
+                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
                     <div class="circle"></div>
                     <h2>Rume Ervaing</h2>
                     <p>
@@ -40,8 +40,24 @@
                         waarde zijn .
                     </p>
                 </div>
-                <div></div>
-                <div></div>
+                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
+                    <div class="circle"></div>
+                    <h2>Rume Ervaing</h2>
+                    <p>
+                        VH Reclame is ruim 52 jaar actief. Met
+                        zoveel ervaring kunnen we voor u van
+                        waarde zijn .
+                    </p>
+                </div>
+                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
+                    <div class="circle"></div>
+                    <h2>Rume Ervaing</h2>
+                    <p>
+                        VH Reclame is ruim 52 jaar actief. Met
+                        zoveel ervaring kunnen we voor u van
+                        waarde zijn .
+                    </p>
+                </div>
             </div>
 
         </div>
