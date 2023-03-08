@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reusable component */
+.button {
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+.item {
+    height: 200px;
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
+
+    & > img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.line {
+    height: 7px;
+    border-radius: 1.7px;
+    width: 40px;
+    background-color: #55595e;
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: rebeccapurple;
+}
+
+/* flex custom classes */
+.flex-center-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col-center-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-image {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+}

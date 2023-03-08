@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @vite(['resources/css/tailwind-input.css', 'resources/scss/app.scss', 'resources/js/navbar.js'])
+    @vite([
+        // 'resources/css/docs.theme.min.css',
+        'resources/css/owl.carousel.min.css',
+        'resources/css/owl.theme.default.min.css',
+        'resources/js/jquery.min.js',
+        'resources/js/owl.carousel.js',
+        'resources/scss/app.scss',
+        'resources/js/navbar.js',
+        'resources/js/slider.js',
+    ])
 </head>
 
 <body>
