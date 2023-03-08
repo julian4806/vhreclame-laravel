@@ -3,20 +3,17 @@
     <div class="flex bg-slate-700">
         <div class="w-full p-6 flex justify-center items-center">
             <div class="bg-slate-50 max-w-md w-full rounded-md flex flex-col gap-4 p-4">
-                <h2 class="text-2xl">Wie zijn wij</h2>
-                <p>
-                    Reclame is uw visitekaartje. Hoe wilt u uw bedrijf presenteren?
-                    Of makkelijk vindbaar maken?
-                    Of het nu gaat om autobelettering, bewegwijzering, gevelreclame
-                    , full-color prints, lichtreclame en nog heel veel meer, met
-                    een expertise van ruim 50 jaar bent u bij ons aan
-                    het goede adres.
-                    <br><br>
-                    Neem contact met ons op voor een vrijblijvend advies.
-                </p>
-                <div>
-                    <button class="button">E-mail</button>
-                </div>
+                @foreach ($listings as $listing)
+                    @if ($loop->index == 0)
+                        <h2 class="text-2xl">{{ $listing->title }}</h2>
+                        <p>
+                            {!! nl2br(e($listing->paragraph)) !!}
+                        </p>
+                        <div>
+                            <button class="button">E-mail</button>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="w-full"></div>
