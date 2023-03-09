@@ -6,9 +6,9 @@
         {{-- hero --}}
         <div class="p-6 flex gap-6 bg-slate-300">
             <div class="w-[60%] flex flex-col gap-4">
-                <h2>Een familiebedrijf uit Utrecht</h2>
+                <h2 class="text-2xl text-block">Een familiebedrijf uit Utrecht</h2>
                 <div class="line"></div>
-                <p>
+                <p class="text-block">
                     Onze vader begon in april 1968 voor zichzelf met VH Reclame,
                     een reclamebedrijf. Op dat moment werd winkelcentrum Hoog Catharijne
                     opgeleverd en was hij dagelijks druk om de winkels daar te
@@ -31,28 +31,28 @@
                 <h2 class="text-2xl">Waarom VH Reclame</h2>
             </div>
             <div class="flex justify-around px-6 gap-6 mt-8">
-                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
+                <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2>Rume Ervaing</h2>
-                    <p>
+                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <p class="text-block">
                         VH Reclame is ruim 52 jaar actief. Met
                         zoveel ervaring kunnen we voor u van
                         waarde zijn .
                     </p>
                 </div>
-                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
+                <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2>Rume Ervaing</h2>
-                    <p>
+                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <p class="text-block">
                         VH Reclame is ruim 52 jaar actief. Met
                         zoveel ervaring kunnen we voor u van
                         waarde zijn .
                     </p>
                 </div>
-                <div class="py-10 px-4 bg-slate-500 rounded-md relative">
+                <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2>Rume Ervaing</h2>
-                    <p>
+                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <p class="text-block">
                         VH Reclame is ruim 52 jaar actief. Met
                         zoveel ervaring kunnen we voor u van
                         waarde zijn .

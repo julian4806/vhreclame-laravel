@@ -10,10 +10,11 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite([
-        // 'resources/css/docs.theme.min.css',
+        'resources/js/jquery.min.js',
+        'resources/css/justifiedGallery.min.css',
+        'resources/js/jquery.justifiedGallery.min.js',
         'resources/css/owl.carousel.min.css',
         'resources/css/owl.theme.default.min.css',
-        'resources/js/jquery.min.js',
         'resources/js/owl.carousel.js',
         'resources/scss/app.scss',
         'resources/js/navbar.js',

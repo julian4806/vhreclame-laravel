@@ -28,3 +28,14 @@ $(document).ready(function () {
         owl.trigger("stop.owl.autoplay");
     });
 });
+
+// Justified Gallery
+$("#mygallery").justifiedGallery({
+    rowHeight: 200,
+    justifyThreshold: 0.4,
+    margins: 5,
+    border: 0,
+    target: "_blank",
+    randomize: true,
+    waitThumbnailsLoad: true,
+});

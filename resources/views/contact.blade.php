@@ -5,22 +5,22 @@
 
         <div class="h-60 flex bg-slate-50">
             <div class="w-full p-6 flex-center-all">
-                <span class="text-4xl">
+                <span class="text-4xl text-block">
                     VH Reclame
                     <br>Sinds 1968
                 </span>
             </div>
             <div class="w-full flex-center-all">
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
+                    <div class="text-block">
                         <span class="font-bold">Email</span><br>
                         <span class="font-thin">info@vhreclame.nl</span>
                     </div>
-                    <div>
+                    <div class="text-block">
                         <span class="font-bold">Bezoekadres</span><br>
                         <span class="font-thin">Stationserf 50, 3991 KZ Houten</span>
                     </div>
-                    <div>
+                    <div class="text-block">
                         <span class="font-bold">Telefoon</span><br>
                         <span class="font-thin">030 261 262 9 / 06 200 60 600</span>
                     </div>
