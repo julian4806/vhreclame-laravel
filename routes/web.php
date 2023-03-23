@@ -26,3 +26,7 @@ Route::get('/contact', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
