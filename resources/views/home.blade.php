@@ -3,7 +3,7 @@
     <div class="flex bg-slate-700">
         <div class="w-full p-6 flex justify-center items-center">
             <div class="bg-slate-50 max-w-md w-full rounded-md flex flex-col gap-8 p-4">
-                @foreach ($paragraphs as $paragraph)
+                {{-- @foreach ($paragraphs as $paragraph)
                     @if ($loop->index == 0)
                         <h2 class="text-2xl text-block">{{ $paragraph->title }}</h2>
                         <p class="text-block">
@@ -13,7 +13,7 @@
                             <button class="button">E-mail</button>
                         </div>
                     @endif
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
         <div class="w-full"></div>
