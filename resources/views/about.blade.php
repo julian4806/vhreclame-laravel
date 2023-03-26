@@ -6,15 +6,10 @@
         {{-- hero --}}
         <div class="p-6 flex gap-6 bg-slate-300">
             <div class="w-[60%] flex flex-col gap-4">
-                <h2 class="text-2xl text-block">Een familiebedrijf uit Utrecht</h2>
+                <h2 class="text-2xl text-block">{{ $pars[0]->title }}</h2>
                 <div class="line"></div>
                 <p class="text-block">
-                    Onze vader begon in april 1968 voor zichzelf met VH Reclame,
-                    een reclamebedrijf. Op dat moment werd winkelcentrum Hoog Catharijne
-                    opgeleverd en was hij dagelijks druk om de winkels daar te
-                    voorzien van lichtreclames en andere gevelreclames. In april 2003 namen
-                    wij als gebroeders van Husen het stokje over en zijn inmiddels alweer bijna 20
-                    jaar druk met VH Reclame. Kortom, ervaring genoeg om u te kunnen helpen!
+                    {{ $pars[0]->title }}
                 </p>
                 <div>
                     <button class="button">Email</button>

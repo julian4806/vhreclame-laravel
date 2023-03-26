@@ -6,9 +6,9 @@ use App\Http\Controllers\TextController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('home');
-});
+
+
+Route::get('/', [TextController::class, 'indexHome'])->name('home');
 
 Route::get('/over-ons', function () {
     return view('about');
@@ -20,13 +20,16 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+
+
+// ADMIN
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('edit-text/home', [TextController::class, 'home'])->middleware(['auth', 'verified'])->name('edit-text.home');
-Route::get('edit-text/contact', [TextController::class, 'contact'])->middleware(['auth', 'verified'])->name('edit-text.contact');
-Route::get('edit-text/about', [TextController::class, 'about'])->middleware(['auth', 'verified'])->name('edit-text.about');
+Route::get('edit-text/home', [TextController::class, 'updateHome'])->middleware(['auth', 'verified'])->name('edit-text.home');
+Route::get('edit-text/contact', [TextController::class, 'updateContact'])->middleware(['auth', 'verified'])->name('edit-text.contact');
+Route::get('edit-text/about', [TextController::class, 'updateAbout'])->middleware(['auth', 'verified'])->name('edit-text.about');
 
 Route::resource('edit-images', ImageController::class)
     ->only(['index', 'store'])

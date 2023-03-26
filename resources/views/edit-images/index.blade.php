@@ -90,8 +90,8 @@
         </div>
 
         <div class="bg-slate-300 my-8 p-6">
-            <div
-            class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die nu in "Recente Projecten" te zien zijn</div>
+            <div class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die nu in
+                "Recente Projecten" te zien zijn</div>
             <div class="overflow-x-auto py-3 gap-4 flex ">
                 <div class="relative">
                     <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt="">
@@ -115,7 +115,8 @@
                 </div>
             </div>
             <button
-                class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase">verwijder uit "Recente Projecten"</button>
+                class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase">verwijder
+                uit "Recente Projecten"</button>
         </div>
     </div>
 </x-app-layout>

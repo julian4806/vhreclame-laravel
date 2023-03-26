@@ -4,9 +4,8 @@
         <table class="w-full text-sm text-left text-gray-400">
             <div class="flex gap-4">
                 <button class="bg-gray-800 text-gray-400 p-2">Home</button>
-                <button class="bg-gray-800 text-white p-2">Over</button>
-                <button class="bg-gray-800 text-gray-400 p-2">Contact</button>
-                contact
+                <button class="bg-gray-800 text-gray-400 p-2">Over</button>
+                <button class="bg-gray-800 text-white p-2">Contact</button>
             </div>
             {{-- <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>

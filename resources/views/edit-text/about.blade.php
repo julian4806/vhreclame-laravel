@@ -5,7 +5,6 @@
             <div class="flex gap-4">
                 <button class="bg-gray-800 text-gray-400 p-2">Home</button>
                 <button class="bg-gray-800 text-white p-2">Over</button>
-                about
                 <button class="bg-gray-800 text-gray-400 p-2">Contact</button>
             </div>
             {{-- <thead class="text-xs text-gray-700 uppercase bg-gray-50">

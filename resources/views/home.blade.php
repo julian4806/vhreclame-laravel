@@ -3,32 +3,23 @@
     <div class="flex bg-slate-700">
         <div class="w-full p-6 flex justify-center items-center">
             <div class="bg-slate-50 max-w-md w-full rounded-md flex flex-col gap-8 p-4">
-                {{-- @foreach ($paragraphs as $paragraph)
-                    @if ($loop->index == 0)
-                        <h2 class="text-2xl text-block">{{ $paragraph->title }}</h2>
-                        <p class="text-block">
-                            {!! nl2br(e($paragraph->paragraph)) !!}
-                        </p>
-                        <div>
-                            <button class="button">E-mail</button>
-                        </div>
-                    @endif
-                @endforeach --}}
+                <h2 class="text-2xl text-block">{{ $pars[0]->title }}</h2>
+                <p class="text-block">
+                    {!! nl2br(e($pars[0]->paragraph)) !!}
+                </p>
+                <div>
+                    <button class="button">E-mail</button>
+                </div>
             </div>
         </div>
         <div class="w-full"></div>
     </div>
 
     {{-- Kenmerken van het bedrijf --}}
-    <div class="p-6">
-        <h2 class="font-bold text-2xl text-block">hallo</h2>
-        <p class="mt-6 mb-6 text-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde qui odio veritatis accusamus
-            ea officia
-            beatae, dolores sapiente suscipit ipsa autem aut tempore ab laborum perferendis amet! Nam, qui repellat, vel
-            molestias adipisci ab nisi minima beatae quidem, officiis rerum.ab nisi minima beatae quidem, officiis
-            rerum.ab nisi minima beatae quidem, officiis rerum.ab nisi minima beatae quidem, officiis rerum.ab nisi
-            minima beatae quidem, officiis rerum.</p>
-        <button class="button">Lees meer</button>
+    <div class="p-6 w-3/4 mx-auto">
+        <h2 class="font-bold text-2xl text-block">{{ $pars[1]->title }}</h2>
+        <p class="mt-6 mb-6 text-block">{{ $pars[1]->paragraph }}</p>
+        <a href="/over-ons" class="button">lees meer</a>
     </div>
 
     {{-- recent projects --}}

@@ -3,12 +3,11 @@
     <div class="relative overflow-x-auto p-6 flex flex-col gap-4 bg-slate-200 my-8 w-4/5 mx-auto">
         <table class="w-full text-sm text-left text-gray-400">
             <div class="flex gap-4">
-                <button class="bg-gray-800 text-gray-400 p-2">Home</button>
-                home
-                <button class="bg-gray-800 text-white p-2">Over</button>
+                <button class="bg-gray-800 text-white p-2">Home</button>
+                <button class="bg-gray-800 text-gray-400 p-2">Over</button>
                 <button class="bg-gray-800 text-gray-400 p-2">Contact</button>
             </div>
-            {{-- <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">
                         Text
@@ -44,5 +43,5 @@
         w-1/3
         ">Sla
             aangepaste teksten op</button>
-    </div> --}}
+    </div>
 </x-app-layout>
