@@ -28,7 +28,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('edit-text/home', [TextController::class, 'updateHome'])->middleware(['auth', 'verified'])->name('edit-text.home');
+
 Route::get('edit-text/contact', [TextController::class, 'updateContact'])->middleware(['auth', 'verified'])->name('edit-text.contact');
+
 Route::get('edit-text/about', [TextController::class, 'updateAbout'])->middleware(['auth', 'verified'])->name('edit-text.about');
 
 Route::resource('edit-images', ImageController::class)
