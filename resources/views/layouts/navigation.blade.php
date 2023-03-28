@@ -15,12 +15,12 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-nav-link>
-                    <x-nav-link :href="route('edit-text.home')" :active="request()->routeIs('edit-text')">
+                    {{-- <x-nav-link :href="route('edit-text.home')" :active="request()->routeIs('edit-text')">
                         Edit Text
                     </x-nav-link>
                     <x-nav-link :href="route('edit-images.index')" :active="request()->routeIs('edit-images.index')">
                         Edit Images
-                    </x-nav-link>
+                    </x-nav-link> --}}
                 </div>
             </div>
 
@@ -84,12 +84,13 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 Dashboard
             </x-responsive-nav-link>
+            {{-- 
             <x-responsive-nav-link :href="route('edit-text.home')" :active="request()->routeIs('edit-text')">
                 Edit Text
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('edit-images.index')" :active="request()->routeIs('edit-images')">
                 Edit Images
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->

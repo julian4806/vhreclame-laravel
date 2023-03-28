@@ -6,23 +6,34 @@
         <div class="h-60 flex bg-slate-50">
             <div class="w-full p-6 flex-center-all">
                 <span class="text-4xl text-block">
-                    VH Reclame
-                    <br>Sinds 1968
+                    {!! nl2br(e($data[0]->body)) !!}
                 </span>
             </div>
             <div class="w-full flex-center-all">
                 <div class="grid grid-cols-2 gap-4">
                     <div class="text-block">
-                        <span class="font-bold">Email</span><br>
-                        <span class="font-thin">info@vhreclame.nl</span>
+                        <span class="font-bold">
+                            {{ $data[1]->header }}
+                        </span><br>
+                        <span class="font-thin">
+                            {{ $data[1]->body }}
+                        </span>
                     </div>
                     <div class="text-block">
-                        <span class="font-bold">Bezoekadres</span><br>
-                        <span class="font-thin">Stationserf 50, 3991 KZ Houten</span>
+                        <span class="font-bold">
+                            {{ $data[2]->header }}
+                        </span><br>
+                        <span class="font-thin">
+                            {{ $data[2]->body }}
+                        </span>
                     </div>
                     <div class="text-block">
-                        <span class="font-bold">Telefoon</span><br>
-                        <span class="font-thin">030 261 262 9 / 06 200 60 600</span>
+                        <span class="font-bold">
+                            {{ $data[3]->header }}
+                        </span><br>
+                        <span class="font-thin">
+                            {{ $data[3]->body }}
+                        </span>
                     </div>
                 </div>
             </div>

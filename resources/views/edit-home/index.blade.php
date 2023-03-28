@@ -1,0 +1,71 @@
+<x-app-layout>
+    @include('layouts.navigation-pages')
+    <div class="relative overflow-x-auto p-6 flex flex-col gap-4 bg-slate-200 my-8 w-4/5 mx-auto">
+        <table class="w-full text-sm text-left text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Header
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Body
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Image
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        section
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        save
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{-- foreach --}}
+                @foreach ($data as $record)
+                    <form method="POST" action="{{ route('edit-home.update', $record->id) }}"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <tr class="border-b text-black bg-gray-800">
+                            <td class="px-6 py-4">
+                                <input type="text" name="header" value="{{ old('header', $record->header) }}">
+                            </td>
+                            <td class="px-6 py-4">
+                                <textarea class="p-2" class="w-full" name="body" cols="60" rows="5">{{ old('body', $record->body) }}</textarea>
+                            </td>
+                            <td class="px-6 py-4">
+                                @if ($record->image)
+                                    <div class="flex items-center">
+                                        <input type="file" name="image" class="bg-white p-2" id=""
+                                            required>
+
+                                        <img src="{{ asset('assets/img/home/' . $record->image) }}" class="h-20"
+                                            alt="">
+                                    </div>
+                                @else
+                                    <div class="bg-white p-2">no image available for this section</div>
+                                @endif
+                            </td>
+                            <td>
+                                <input type="text" name="section" placeholder="{{ $record->section }}" disabled>
+                            </td>
+                            <td>
+                                <button
+                                    class="bg-red-500 text-white text-center p-2 mb-6 select-none cursor-pointer  
+                                hover:bg-red-700 
+                                active:bg-red-900
+                                font-bold
+                                uppercase
+                                ">Sla
+                                    aangepaste teksten op</button>
+                            </td>
+                        </tr>
+                    </form>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    @include('components.insert-alert')
+</x-app-layout>

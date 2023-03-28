@@ -2,35 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Models\Text;
-use Illuminate\Http\Request;
+use App\Models\About;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
-class TextController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function updateHome(): View
+    public function index(): View
     {
-        return view('edit-text.home');
-    }
-    public function indexHome(): View
-    {
-        $pars = DB::table('paragraphs')->get();
-        return view('home', ['pars' => $pars]);
+        return view('edit-about.index', [
+            'data' => About::all(),
+        ]);
     }
 
 
-    public function updateAbout(): View
-    {
-        return view('edit-text.about');
-    }
-    public function updateContact(): View
-    {
-        return view('edit-text.contact');
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -50,7 +38,7 @@ class TextController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Text $text)
+    public function show(About $about)
     {
         //
     }
@@ -58,7 +46,7 @@ class TextController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Text $text)
+    public function edit(About $about)
     {
         //
     }
@@ -66,7 +54,7 @@ class TextController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Text $text)
+    public function update(Request $request, About $about)
     {
         //
     }
@@ -74,8 +62,16 @@ class TextController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Text $text)
+    public function destroy(About $about)
     {
         //
+    }
+
+    // RENDER TO THE ACTUAL WEBPAGE
+    public function about(): View
+    {
+        return view('about', [
+            'data' => About::all(),
+        ]);
     }
 }

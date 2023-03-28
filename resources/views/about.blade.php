@@ -6,10 +6,12 @@
         {{-- hero --}}
         <div class="p-6 flex gap-6 bg-slate-300">
             <div class="w-[60%] flex flex-col gap-4">
-                <h2 class="text-2xl text-block">{{ $pars[0]->title }}</h2>
+                <h2 class="text-2xl text-block">
+                    {{ $data[0]->header }}
+                </h2>
                 <div class="line"></div>
                 <p class="text-block">
-                    {{ $pars[0]->title }}
+                    {{ $data[0]->body }}
                 </p>
                 <div>
                     <button class="button">Email</button>
@@ -28,29 +30,29 @@
             <div class="flex justify-around px-6 gap-6 mt-8">
                 <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <h2 class="text-block text-xl">
+                        {{ $data[1]->header }}
+                    </h2>
                     <p class="text-block">
-                        VH Reclame is ruim 52 jaar actief. Met
-                        zoveel ervaring kunnen we voor u van
-                        waarde zijn .
+                        {{ $data[1]->body }}
                     </p>
                 </div>
                 <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <h2 class="text-block text-xl">
+                        {{ $data[2]->header }}
+                    </h2>
                     <p class="text-block">
-                        VH Reclame is ruim 52 jaar actief. Met
-                        zoveel ervaring kunnen we voor u van
-                        waarde zijn .
+                        {{ $data[2]->body }}
                     </p>
                 </div>
                 <div class="py-10 px-4 bg-slate-500 rounded-md flex flex-col gap-2 relative">
                     <div class="circle"></div>
-                    <h2 class="text-block text-xl"> Rume Ervaing</h2>
+                    <h2 class="text-block text-xl">
+                        {{ $data[3]->header }}
+                    </h2>
                     <p class="text-block">
-                        VH Reclame is ruim 52 jaar actief. Met
-                        zoveel ervaring kunnen we voor u van
-                        waarde zijn .
+                        {{ $data[3]->body }}
                     </p>
                 </div>
             </div>
