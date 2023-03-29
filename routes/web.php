@@ -26,11 +26,11 @@ Route::resource('edit-home', HomeController::class)
     ->middleware(['auth', 'verified']);
 
 Route::resource('edit-about', AboutController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('edit-contact', ContactController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
 

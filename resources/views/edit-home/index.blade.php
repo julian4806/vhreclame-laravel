@@ -37,11 +37,12 @@
                             </td>
                             <td class="px-6 py-4">
                                 @if ($record->image)
-                                    <div class="flex items-center">
-                                        <input type="file" name="image" class="bg-white p-2" id=""
-                                            required>
-
-                                        <img src="{{ asset('assets/img/home/' . $record->image) }}" class="h-20"
+                                    <div class="flex items-center relative">
+                                        <div class="flex flex-col bg-white p-2">
+                                            <input type="file" name="image" id="">
+                                            <span class="text-red-500">.jpg | files only!</span>
+                                        </div>
+                                        <img src="{{ asset('assets/img/home/' . $record->image) }}" class="h-20 absolute right-2"
                                             alt="">
                                     </div>
                                 @else
@@ -49,7 +50,7 @@
                                 @endif
                             </td>
                             <td>
-                                <input type="text" name="section" placeholder="{{ $record->section }}" disabled>
+                                <input type="text" name="section" value="{{ $record->section }}">
                             </td>
                             <td>
                                 <button

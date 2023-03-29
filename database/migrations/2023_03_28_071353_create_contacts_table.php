@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('header', 255);
             $table->text('body');
             $table->string('image', 100);
+            $table->unsignedBigInteger('section_id');
+            $table->foreign('section_id')->references('id')->on('sections')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

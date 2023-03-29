@@ -1,24 +1,16 @@
 <x-layout>
     <x-slot:title>VH - Contact</x-slot>
         {{-- header --}}
-        <x-hero>Contact</x-hero>
+        <x-hero :image="$data[2]->header">Contact</x-hero>
 
         <div class="h-60 flex bg-slate-50">
             <div class="w-full p-6 flex-center-all">
                 <span class="text-4xl text-block">
-                    {!! nl2br(e($data[0]->body)) !!}
+                    {!! nl2br(e($data[1]->body)) !!}
                 </span>
             </div>
             <div class="w-full flex-center-all">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="text-block">
-                        <span class="font-bold">
-                            {{ $data[1]->header }}
-                        </span><br>
-                        <span class="font-thin">
-                            {{ $data[1]->body }}
-                        </span>
-                    </div>
                     <div class="text-block">
                         <span class="font-bold">
                             {{ $data[2]->header }}
@@ -33,6 +25,14 @@
                         </span><br>
                         <span class="font-thin">
                             {{ $data[3]->body }}
+                        </span>
+                    </div>
+                    <div class="text-block">
+                        <span class="font-bold">
+                            {{ $data[4]->header }}
+                        </span><br>
+                        <span class="font-thin">
+                            {{ $data[4]->body }}
                         </span>
                     </div>
                 </div>

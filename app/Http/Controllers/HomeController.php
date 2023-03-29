@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use App\Models\Home;
 use App\Models\Section;
 use Illuminate\View\View;
@@ -68,14 +69,17 @@ class HomeController extends Controller
         $validated = $request->validate([
             'header' => 'string|max:255',
             'body' => 'string',
-            'section'=> 'string',
-            'image' => 'file|mimes:jpg,png',
+            'image' => 'file|mimes:jpg',
         ]);
 
-        $newImageName = time() . '-' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('assets/img/home'), $newImageName);
-        $validated['image'] = $newImageName;
+        if ($request->hasFile('image')) {
+            $path = 'assets/img/home';
+            $fileName = $request->section;
 
+            $newImageName = $fileName . '.' . $request->file('image')->guessExtension();
+            $request->image->move(public_path($path), $newImageName);
+            $validated['image'] = $newImageName;
+        }
         Home::where('id', $id)->update($validated);
         return redirect(route('edit-home.index'))->with('message', 'Record updated successfully.');
     }
