@@ -42,11 +42,11 @@
                                             <input type="file" name="image" id="">
                                             <span class="text-red-500">.jpg | files only!</span>
                                         </div>
-                                        <img src="{{ asset('assets/img/home/' . $record->image) }}" class="h-20 absolute right-2"
-                                            alt="">
+                                        <img src="{{ asset('assets/img/home/' . $record->image) }}"
+                                            class="h-20 absolute right-2" alt="">
                                     </div>
                                 @else
-                                    <div class="bg-white p-2">no image available for this section</div>
+                                    @include('components.not-available', ['type' => 'image'])
                                 @endif
                             </td>
                             <td>
@@ -60,7 +60,7 @@
                                 font-bold
                                 uppercase
                                 ">Sla
-                                    aangepaste teksten op</button>
+                                    op</button>
                             </td>
                         </tr>
                     </form>

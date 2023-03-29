@@ -72,6 +72,7 @@ class AboutController extends Controller
             'image' => 'file|mimes:jpg',
         ]);
 
+
         if ($request->hasFile('image')) {
             $path = 'assets/img/about';
             $fileName = $request->section;

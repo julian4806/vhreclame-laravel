@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\File;
-use App\Models\Contact;
+use App\Models\Gallery;
 use App\Models\Section;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -12,20 +12,20 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
-class ContactController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        $sections = Contact::join('sections', 'sections.id', '=', 'contacts.section_id')
-            ->select('contacts.*', 'sections.section as section')
+        $sections = Gallery::join('sections', 'sections.id', '=', 'galleries.section_id')
+            ->select('galleries.*', 'sections.section as section')
             ->get();
         // ->toArray();
 
         // dd($sections);
-        return view('edit-contact.index', [
+        return view('edit-gallery.index', [
             'data' => $sections,
         ]);
     }
@@ -49,7 +49,7 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contact $contact)
+    public function show(Gallery $gallery)
     {
         //
     }
@@ -73,29 +73,51 @@ class ContactController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $path = 'assets/img/contact';
+            $path = 'assets/img/gallery';
             $fileName = $request->section;
             $newImageName = $fileName . '.' . $request->file('image')->guessExtension();
             $request->image->move(public_path($path), $newImageName);
             $validated['image'] = $newImageName;
         }
-        Contact::where('id', $id)->update($validated);
-        return redirect(route('edit-contact.index'))->with('message', 'Record updated successfully.');
+        Gallery::where('id', $id)->update($validated);
+        return redirect(route('edit-gallery.index'))->with('message', 'Record updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contact $contact)
+    public function destroy(Gallery $gallery)
     {
         //
     }
 
     // RENDER TO THE ACTUAL WEBPAGE
-    public function contact(): View
+    public function gallery(Request $request): View
     {
-        return view('contact', [
-            'data' => Contact::all(),
+        $allCateogries = Storage::disk('foto-gallerij')->allDirectories();
+        $path = public_path('assets/img/foto_gallerij/');
+
+        if ($request->selected_category) {
+            $category = $request->selected_category;
+            $path = public_path('assets/img/foto_gallerij/' . $category);
+            $images = File::allFiles($path);
+
+            return view('gallery', [
+                'data' => Gallery::all(),
+                'categories' => $allCateogries,
+                'selected_category' => $category,
+                'images' => $images
+            ]);
+        }
+
+        $path = public_path('assets/img/foto_gallerij/' . $allCateogries[0]);
+        $images = File::allFiles($path);
+
+        return view('gallery', [
+            'data' => Gallery::all(),
+            'categories' => $allCateogries,
+            'selected_category' => $allCateogries[0],
+            'images' => $images
         ]);
     }
 }

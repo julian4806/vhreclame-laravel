@@ -12,6 +12,6 @@ class Section extends Model
 
     public function section(): HasOne
     {
-        return $this->hasOne(Contact::class)->hasOne(Home::class)->hasOne(About::class);
+        return $this->hasOne(Contact::class)->hasOne(Home::class)->hasOne(Gallery::class)->hasOne(About::class);
     }
 }

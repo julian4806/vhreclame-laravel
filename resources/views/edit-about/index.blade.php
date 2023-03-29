@@ -30,10 +30,19 @@
                         @method('PUT')
                         <tr class="border-b text-black bg-gray-800">
                             <td class="px-6 py-4">
-                                <input type="text" name="header" value="{{ old('header', $record->header) }}">
+                                @if ($record->header)
+                                    <input type="text" name="header" value="{{ old('header', $record->header) }}"
+                                        required>
+                                @else
+                                    @include('components.not-available', ['type' => 'header'])
+                                @endif
                             </td>
                             <td class="px-6 py-4">
-                                <textarea class="p-2" class="w-full" name="body" cols="60" rows="5">{{ old('body', $record->body) }}</textarea>
+                                @if ($record->body)
+                                    <textarea class="p-2" class="w-full" name="body" cols="60" rows="5" required>{{ old('body', $record->body) }}</textarea>
+                                @else
+                                    @include('components.not-available', ['type' => 'body'])
+                                @endif
                             </td>
                             <td class="px-6 py-4">
                                 @if ($record->image)
@@ -46,11 +55,11 @@
                                             class="h-20 absolute right-2" alt="">
                                     </div>
                                 @else
-                                    <div class="bg-white p-2">no image available for this section</div>
+                                    @include('components.not-available', ['type' => 'image'])
                                 @endif
                             </td>
                             <td>
-                                <input type="text" name="section" value="{{ $record->section }}">
+                                <input type="text" name="section" value="{{ $record->section }}" readonly>
                             </td>
                             <td>
                                 <button
@@ -60,7 +69,7 @@
                                 font-bold
                                 uppercase
                                 ">Sla
-                                    aangepaste teksten op</button>
+                                    op</button>
                             </td>
                         </tr>
                     </form>

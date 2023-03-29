@@ -3,22 +3,22 @@
         <h2 class="text-2xl text-center pb-6">Recente Projecten</h2>
         <div class="owl-carousel owl-theme px-12">
             <div class="item">
-                <img src="{{ asset('assets/img/example.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
             <div class="item">
-                <img src="{{ asset('assets/img/example.jpg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
             <div class="item">
-                <img src="{{ asset('assets/img/wide.jpg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
             <div class="item">
-                <img src="{{ asset('assets/img/example.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
             <div class="item">
-                <img src="{{ asset('assets/img/example.jpg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
             <div class="item">
-                <img src="{{ asset('assets/img/wide.jpg') }}" alt="">
+                <img src="{{ asset('assets/img/foto_slider/FOTO.JPG') }}" alt="">
             </div>
         </div>
     </div>

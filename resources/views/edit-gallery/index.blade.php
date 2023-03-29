@@ -24,7 +24,7 @@
             <tbody>
                 {{-- foreach --}}
                 @foreach ($data as $record)
-                    <form method="POST" action="{{ route('edit-contact.update', $record->id) }}"
+                    <form method="POST" action="{{ route('edit-gallery.update', $record->id) }}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -51,7 +51,7 @@
                                             <input type="file" name="image" id="">
                                             <span class="text-red-500">.jpg | files only!</span>
                                         </div>
-                                        <img src="{{ asset('assets/img/contact/' . $record->image) }}"
+                                        <img src="{{ asset('assets/img/gallery/' . $record->image) }}"
                                             class="h-20 absolute right-2" alt="">
                                     </div>
                                 @else

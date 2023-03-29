@@ -10,6 +10,9 @@
                     <x-nav-link :href="route('edit-home.index')" :active="request()->routeIs('edit-home.index')">
                         Home
                     </x-nav-link>
+                    <x-nav-link :href="route('edit-gallery.index')" :active="request()->routeIs('edit-gallery.index')">
+                        Gallerij
+                    </x-nav-link>
                     <x-nav-link :href="route('edit-about.index')" :active="request()->routeIs('edit-about.index')">
                         Over Ons
                     </x-nav-link>

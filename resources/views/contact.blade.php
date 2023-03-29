@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>VH - Contact</x-slot>
         {{-- header --}}
-        <x-hero :image="$data[2]->header">Contact</x-hero>
+        <x-hero :image="'contact/' . $data[0]->image">Contact</x-hero>
 
         <div class="h-60 flex bg-slate-50">
             <div class="w-full p-6 flex-center-all">
