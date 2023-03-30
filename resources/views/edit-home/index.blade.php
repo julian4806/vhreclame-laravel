@@ -50,7 +50,7 @@
                                 @endif
                             </td>
                             <td>
-                                <input type="text" name="section" value="{{ $record->section }}">
+                                <input type="text" name="section" value="{{ $record->section }}" readonly>
                             </td>
                             <td>
                                 <button
@@ -59,8 +59,9 @@
                                 active:bg-red-900
                                 font-bold
                                 uppercase
-                                ">Sla
-                                    op</button>
+                                ">
+                                    Sla op
+                                </button>
                             </td>
                         </tr>
                     </form>

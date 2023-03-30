@@ -13,11 +13,11 @@
                 </div>
             </div>
         </div>
-        <div class="w-full"></div>
+        <div class="w-full hidden md:block"></div>
     </div>
 
     {{-- Kenmerken van het bedrijf --}}
-    <div class="p-6 w-3/4 mx-auto">
+    <div class="p-6 md:w-3/4">
         <h2 class="font-bold text-2xl text-block">{{ $data[1]->header }}</h2>
         <p class="mt-6 mb-6 text-block">{{ $data[1]->body }}</p>
         <a href="/over-ons" class="button">lees meer</a>

@@ -71,7 +71,7 @@ class ContactController extends Controller
             'body' => 'string',
             'image' => 'file|mimes:jpg',
         ]);
-
+        
         if ($request->hasFile('image')) {
             $path = 'assets/img/contact';
             $fileName = $request->section;
