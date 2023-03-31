@@ -4,24 +4,34 @@
         <div class="relative overflow-x-auto p-6 flex flex-col gap-4 bg-slate-200 my-8">
             <table class="w-full text-sm text-left text-gray-400">
                 <div class="flex items-center">
-                    <label for="">Verander hier de folder:&nbsp;&nbsp;</label>
-                    <select name="" id="">
-                        <option value="">/banners vlaggen</option>
-                        <option value="">/andere folder</option>
-                    </select>
-                    <div class="flex gap-4">
-                        <button class="bg-red-500 text-white px-2">selecter folder</button>
-                        <div class="flex">
-                            <input type="text" name="" id="">
-                            <button class="bg-red-500 text-white px-2">voeg nieuwe folder toe</button>
-                        </div>
-                        <button class="bg-red-500 text-white px-2">verwijder folder <span
-                                class="font-bold italic text-blue-200">(banners vlaggen)</span></button>
-                    </div>
+                    <form action="/edit-images/fetch_images" method="GET">
+                        @csrf
+                        <label for="">Verander hier de folder:&nbsp;&nbsp;</label>
+                        <select name="change_folder" onchange="this.form.submit()">
+                            @foreach ($allFolders as $folder)
+                                @if ($folder === $selectedFolder)
+                                    <option value="{{ $selectedFolder }}" selected>/{{ $selectedFolder }}</option>
+                                @else
+                                    <option value="{{ $folder }}">/{{ $folder }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </form>
+                    <form action="/edit-images/add_folder" class="ml-4 flex items-center">
+                        <label for="">voeg hier een nieuwe folder toe:</label>
+                        <input type="text" name="folderToAdd" required>
+                        <button class="bg-red-500 text-white px-2">voeg folder toe</button>
+                    </form>
+                    <form action="/edit-images/delete_folder" class="ml-4 flex items-center">
+                        <input type="text" name="folderToDelete" value="{{ $selectedFolder }}" class="hidden">
+                        <button class="bg-red-500 text-white px-2 ml-4">verwijder folder
+                            <span class="font-bold italic text-blue-200">({{ $selectedFolder }})</span>
+                        </button>
+                    </form>
                 </div>
                 <div>
                     <label for="">Upload foto's naar de geselecteerde folder: </label>
-                    <input type="file" name="" id="">
+                    <input type="file" name="">
                 </div>
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
@@ -29,39 +39,40 @@
                             Text
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Foto-naam
+                            Foto-naam <i>(vul geen bestands-extentie in)</i>
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Folder-naam
-                            <br>
-                            <div class="font-light text-[10px] italic w-80">
-                                wanneer er een folder naam wordt ingevuld die nog niet bestaat wordt deze
-                                automatisch
-                                aangemaakt, wanneer een folder leeg is wordt deze automatisch verwijderd
-                            </div>
-                        </th>
+
                         <th scope="col" class="px-6 py-3">
                             Laat bij "Recente Projecten" zien?
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Verwijder
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b bg-gray-800">
-                        <th scope="row" class="px-6 py-4 h-60 text-gray-900 whitespace-nowrap">
-                            <img src="{{ asset('assets/img/1.jpg') }}" class="h-full" alt="">
-                        </th>
-                        <td class="px-6 py-4 font-medium text-gray-900">
-                            <input class="p-2 mb-1" placeholder="foto-naam.jpg"><br>
-                            <button
-                                class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer  
+                    @foreach ($images as $imageFull)
+                        @php
+                            $imgName = pathinfo($imageFull, PATHINFO_FILENAME);
+                            $imgExt = '.' . pathinfo($imageFull, PATHINFO_EXTENSION);
+                        @endphp
+                        <tr class="border-b bg-gray-800">
+                            <th scope="row" class="px-6 py-4 h-60 text-gray-900 whitespace-nowrap">
+                                <img src="{{ asset('assets/img/foto_gallerij/' . $selectedFolder . '/' . $imgName . $imgExt) }}"
+                                    class="h-full object-contain" alt="">
+                            </th>
+                            <td class="px-6 py-4 font-medium text-gray-900">
+                                <input class="p-2 mb-1" placeholder="{{ $imgName }}">
+                                <button
+                                    class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer  
                     hover:bg-red-700 
                     active:bg-red-900
                     font-bold
                     uppercase
                     ">verander</button>
-                        </td>
-                        <td class="px-6 py-4 font-medium text-gray-900">
-                            <select name="" id="" class="p-2 mb-1">
+                            </td>
+                            {{-- <td class="px-6 py-4 font-medium text-gray-900">
+                            <select name=""  class="p-2 mb-1">
                                 <option value="">/banners vlaggen</option>
                                 <option value="">/andere folder</option>
                             </select><br>
@@ -72,19 +83,32 @@
                         font-bold
                         uppercase
                         ">verplaats</button>
-                        </td>
-                        <td class="px-6 py-4">
-                            <input type="checkbox" name="" id="">
-                            <button
-                                class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer  
+                        </td> --}}
+                            <td class="px-6 py-4">
+                                <input type="checkbox" name="slider[album]" class="h-10 w-10" value=''>
+                                <button
+                                    class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer  
                     hover:bg-red-700 
                     active:bg-red-900
                     font-bold
                     uppercase
-                    ">pas
-                                toe</button>
-                        </td>
-                    </tr>
+                    ">
+                                    voeg toe aan recente projecten slider
+                                </button>
+                            </td>
+                            <td>
+                                <button
+                                    class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer  
+                hover:bg-red-700 
+                active:bg-red-900
+                font-bold
+                uppercase
+                ">
+                                    verwijder
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

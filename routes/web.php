@@ -33,14 +33,18 @@ Route::resource('edit-gallery', GalleryController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
+
+
 Route::resource('edit-contact', ContactController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
-
 Route::resource('edit-images', ImageController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
+Route::get('/edit-images/fetch_images', [ImageController::class, 'showFolder'])->middleware(['auth', 'verified']);
+Route::get('/edit-images/add_folder', [ImageController::class, 'addFolder'])->middleware(['auth', 'verified']);
+Route::get('/edit-images/delete_folder', [ImageController::class, 'deleteFolder'])->middleware(['auth', 'verified']);
 
 
 
