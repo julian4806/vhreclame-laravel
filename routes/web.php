@@ -42,10 +42,16 @@ Route::resource('edit-contact', ContactController::class)
 Route::resource('edit-images', ImageController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
+
 Route::get('/edit-images/fetch_images', [ImageController::class, 'showFolder'])->middleware(['auth', 'verified']);
 Route::get('/edit-images/add_folder', [ImageController::class, 'addFolder'])->middleware(['auth', 'verified']);
 Route::get('/edit-images/delete_folder', [ImageController::class, 'deleteFolder'])->middleware(['auth', 'verified']);
 
+Route::post('/edit-images/upload_images', [ImageController::class, 'uploadImages'])->middleware(['auth', 'verified']);
+Route::post('/edit-images/change_image_name', [ImageController::class, 'changeImageName'])->middleware(['auth', 'verified']);
+Route::post('/edit-images/delete_image', [ImageController::class, 'deleteImage'])->middleware(['auth', 'verified']);
+
+Route::get('/edit-images/add_to_slider', [ImageController::class, 'addToSlider'])->middleware(['auth', 'verified']);
 
 
 

@@ -95,7 +95,7 @@ class ImageController extends Controller
         }
 
 
-        
+
         $allFolders = Storage::disk('foto-gallerij')->allDirectories();
 
         return view('edit-images.index', [
@@ -104,8 +104,68 @@ class ImageController extends Controller
             'allFolders' => $allFolders
         ]);
     }
+    // images
+    public function uploadImages(Request $request)
+    {
+        $selectedFolder = $request->selectedFolder;
+        foreach ($request->file('images') as $file) {
+            $fileName = $file->getClientOriginalName();
+            $path = $file->storeAs($selectedFolder, $fileName, 'foto-gallerij');
+        }
 
+        return $this->requestDirectories($selectedFolder, 'change'); //xxx
+        // return redirect('/edit-images');
+    }
 
+    public function changeImageName(Request $request)
+    {
+        $imageExtension = $request->imageExt;
+
+        $selectedFolder = $request->selectedFolder;
+        $oldImageName = $request->oldImageName . $imageExtension;
+        $newImageName = $request->newImageName . $imageExtension;
+
+        // Get the path to the image
+        $folderLoc = 'assets/img/foto_gallerij/';
+        $path = public_path($folderLoc . $selectedFolder . '/' . $oldImageName);
+
+        if (!file_exists($path)) {
+            dd($path);
+            dd('Image not found');
+        }
+
+        $newPath = public_path($folderLoc . $selectedFolder . '/' . $newImageName);
+        if (file_exists($newPath)) {
+            dd('The new image name already exists');
+        }
+
+        if ($imageExtension === $newImageName) {
+            dd("Fill in a name");
+        }
+
+        rename($path, $newPath);
+        return $this->requestDirectories($selectedFolder, 'change'); //xxx
+    }
+
+    public function deleteImage(Request $request)
+    {
+        $image = $request->image;
+        $selectedFolder = $request->selectedFolder;
+
+        $path = $selectedFolder . '/' . $image;
+        Storage::disk('foto-gallerij')->delete($path);
+        return $this->requestDirectories($selectedFolder, 'change');
+    }
+
+    public function addToSlider(Request $request)
+    {
+        if ($request->checkbox === "on") {
+            $selectedFolder = $request->selectedFolder;
+            $image = $request->image;
+
+            
+        }
+    }
 
     /**
      * Show the form for editing the specified resource.
