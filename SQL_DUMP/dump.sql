@@ -1,6 +1,4 @@
 /*
- Navicat Premium Data Transfer
-
  Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 100424
@@ -11,7 +9,7 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 20/04/2023 13:15:07
+ Date: 21/04/2023 16:05:13
 */
 
 SET NAMES utf8mb4;
@@ -240,14 +238,16 @@ DROP TABLE IF EXISTS `sliders`;
 CREATE TABLE `sliders`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `slider_id` int(11) NOT NULL,
-  `slider_array` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slider_array` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sliders
 -- ----------------------------
-INSERT INTO `sliders` VALUES (1, 1, '[]');
+INSERT INTO `sliders` VALUES (1, 1, '[\"\\/algemene lett\\/HALLOHALLOHALLO.jpg\",\"\\/algemene lett\\/foto3.jpg\",\"\\/algemene lett\\/landscape.jpg\",\"\\/algemene lett\\/landscape2.jpg\",\"\\/banners vlaggen\\/second added.jpg\",\"\\/banners vlaggen\\/test.png\",\"\\/banners vlaggen\\/test2.png\"]', NULL, '2023-04-21 14:04:39');
 
 -- ----------------------------
 -- Table structure for users
