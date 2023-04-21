@@ -1,4 +1,5 @@
 /*
+ Navicat Premium Data Transfer
 
  Source Server         : localhost
  Source Server Type    : MySQL
@@ -10,7 +11,7 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 29/03/2023 16:50:10
+ Date: 20/04/2023 13:15:07
 */
 
 SET NAMES utf8mb4;
@@ -157,7 +158,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of migrations
@@ -172,6 +173,7 @@ INSERT INTO `migrations` VALUES (16, '2023_03_28_071337_create_homes_table', 1);
 INSERT INTO `migrations` VALUES (17, '2023_03_28_071340_create_abouts_table', 1);
 INSERT INTO `migrations` VALUES (18, '2023_03_28_071353_create_contacts_table', 1);
 INSERT INTO `migrations` VALUES (19, '2023_03_29_120621_create_galleries_table', 2);
+INSERT INTO `migrations` VALUES (20, '2023_04_20_092825_create_sliders_table', 3);
 
 -- ----------------------------
 -- Table structure for password_reset_tokens
@@ -232,6 +234,22 @@ INSERT INTO `sections` VALUES (4, 'card');
 INSERT INTO `sections` VALUES (5, 'info');
 
 -- ----------------------------
+-- Table structure for sliders
+-- ----------------------------
+DROP TABLE IF EXISTS `sliders`;
+CREATE TABLE `sliders`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `slider_id` int(11) NOT NULL,
+  `slider_array` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sliders
+-- ----------------------------
+INSERT INTO `sliders` VALUES (1, 1, '[]');
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
@@ -251,6 +269,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', NULL, '2023-03-29 11:13:02', '2023-03-29 11:13:02');
+INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', 'GqlMys3Pl9n5Kte6RIhMmYh1LZ10Y3Xu71g1fyRzWBiA3bFmwvH52rAPOR46', '2023-03-29 11:13:02', '2023-03-29 11:13:02');
 
 SET FOREIGN_KEY_CHECKS = 1;

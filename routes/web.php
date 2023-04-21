@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
+// pagina's
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/over-ons', [AboutController::class, 'about']);
 Route::get('/contact', [ContactController::class, 'contact']);
@@ -52,6 +53,7 @@ Route::post('/edit-images/change_image_name', [ImageController::class, 'changeIm
 Route::post('/edit-images/delete_image', [ImageController::class, 'deleteImage'])->middleware(['auth', 'verified']);
 
 Route::get('/edit-images/add_to_slider', [ImageController::class, 'addToSlider'])->middleware(['auth', 'verified']);
+Route::get('/edit-images/remove_from_slider', [ImageController::class, 'removeFromSlider'])->middleware(['auth', 'verified']);
 
 
 

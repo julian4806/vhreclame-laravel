@@ -70,22 +70,27 @@
                                 </form>
                             </td> {{-- <td class="px-6 py-4 font-medium text-gray-900"> <select name=""  class="p-2 mb-1"> <option value="">/banners vlaggen</option> <option value="">/andere folder</option> </select><br> <button class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase ">verplaats</button> </td> --}} <td class="px-6 py-4">
                                 {{-- SLIDER --}}
-                                <form action="/edit-images/add_to_slider" method="GET">
-                                    <input type="checkbox" {{ false ? 'checked' : '' }} name="checkbox"
-                                        class="h-10 w-10">
+                                @php
+                                    $fullPath = '/' . $selectedFolder . '/' . $imgName . $imgExt;
+                                @endphp
+                                @if (!in_array($fullPath, $sliderArray))
+                                    <form action="/edit-images/add_to_slider" method="GET">
+                                        {{-- folder image is in --}}
+                                        <input type="text" name="selectedFolder" value="{{ $selectedFolder }}"
+                                            readonly hidden>
+                                        {{-- old image name with extension --}}
+                                        <input type="text" name="image" value="{{ $imgName . $imgExt }}" readonly
+                                            hidden>
 
-                                    {{-- folder image is in --}}
-                                    <input type="text" name="selectedFolder" value="{{ $selectedFolder }}" readonly
-                                        hidden>
-                                    {{-- old image name with extension --}}
-                                    <input type="text" name="image" value="{{ $imgName . $imgExt }}" readonly
-                                        hidden>
-
-
-                                    <button
-                                        class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase ">
-                                        voeg toe aan recente projecten slider </button>
-                                </form>
+                                        <button
+                                            class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase ">
+                                            voeg toe aan recente projecten slider </button>
+                                    </form>
+                                @else
+                                    <div
+                                        class="bg-red-500 text-white text-center p-1 mb-6 select-none hover:bg-red-700 active:bg-red-900 font-bold uppercase ">
+                                        FOTO IS AL TOEGEVOEGD AAN SLIDER </div>
+                                @endif
                             </td>
                             <td>
 
@@ -110,26 +115,29 @@
                 </tbody>
             </table>
         </div>
-        <div class="bg-slate-300 my-8 p-6">
-            <div class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die nu in
-                "Recente Projecten" te zien zijn</div>
-            <div class="overflow-x-auto py-3 gap-4 flex ">
-                <div class="relative"> <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt=""> <input
-                        type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]"> </div>
-                <div class="relative"> <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt="">
-                    <input type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]"> </div>
-                <div class="relative"> <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt="">
-                    <input type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]">
+        {{-- recent projects slider --}}
+        <form class="bg-slate-300 my-8 p-6" action="/edit-images/remove_from_slider">
+            @if ($sliderArray)
+                <div class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die nu in
+                    "Recente Projecten" te zien zijn</div>
+                <div class="overflow-x-auto py-3 gap-4 flex ">
+                    @foreach ($sliderArray as $photo)
+                        <div class="relative">
+                            <img src="{{ asset('assets/img/foto_gallerij' . $photo) }}" class="h-20" alt="">
+                            <input type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]"
+                                name="deleteFromSlider[]" value="{{ $photo }}">
+                        </div>
+                    @endforeach
                 </div>
-                <div class="relative"> <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt="">
-                    <input type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]">
-                </div>
-                <div class="relative"> <img src="{{ asset('assets/img/1.jpg') }}" class="h-20" alt="">
-                    <input type="checkbox" class="absolute top-0 right-0 translate-x-1/2 translate-y-[-50%]">
-                </div>
-            </div> <button
-                class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase">verwijder
-                uit "Recente Projecten"</button>
-        </div>
+
+                {{-- meesturen zodat PHP 'm kan lezen --}}
+                <input type="text" name="selectedFolder" value="{{ $selectedFolder }}" readonly hidden>
+
+                <button
+                    class="bg-red-500 text-white text-center p-1 mb-6 select-none cursor-pointer hover:bg-red-700 active:bg-red-900 font-bold uppercase">verwijder
+                    uit "Recente Projecten"
+                </button>
+            @endif
+        </form>
     </div>
 </x-app-layout>

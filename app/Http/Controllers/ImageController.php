@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Slider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -97,11 +99,14 @@ class ImageController extends Controller
 
 
         $allFolders = Storage::disk('foto-gallerij')->allDirectories();
+        $array = Slider::where('slider_id', 1)->pluck('slider_array')->first();
+        $sliderArray = json_decode($array);
 
         return view('edit-images.index', [
             'images' => $images,
             'selectedFolder' => $requestedFolder,
-            'allFolders' => $allFolders
+            'allFolders' => $allFolders,
+            'sliderArray' => $sliderArray
         ]);
     }
     // images
@@ -113,8 +118,17 @@ class ImageController extends Controller
             $path = $file->storeAs($selectedFolder, $fileName, 'foto-gallerij');
         }
 
-        return $this->requestDirectories($selectedFolder, 'change'); //xxx
+        return $this->requestDirectories($selectedFolder, 'change');
         // return redirect('/edit-images');
+    }
+
+    private function invalidCharacters($filename)
+    {
+        if (!preg_match('/^[a-zA-Z0-9_.-]+$/', $filename)) {
+            // de bestandsnaam bevat illegale tekens
+            // return redirect()->back()->with('error', 'De bestandsnaam bevat illegale tekens.');
+            dd('illigal characters');
+        }
     }
 
     public function changeImageName(Request $request)
@@ -124,6 +138,21 @@ class ImageController extends Controller
         $selectedFolder = $request->selectedFolder;
         $oldImageName = $request->oldImageName . $imageExtension;
         $newImageName = $request->newImageName . $imageExtension;
+
+        $this->invalidCharacters($newImageName);
+
+
+        // check if is inside the slider array
+        $array = Slider::where('slider_id', 1)->pluck('slider_array')->first();
+        $sliderArray = json_decode($array);
+        $toFind = "/" . $selectedFolder . "/" . $oldImageName;
+        $replaceWith =  "/" . $selectedFolder . "/" . $newImageName;
+
+        if (in_array($toFind, $sliderArray)) {
+            $sliderArray[array_search($toFind, $sliderArray)] = $replaceWith;
+            Slider::where('slider_id', 1)->update(['slider_array' => json_encode($sliderArray)]);
+        }
+
 
         // Get the path to the image
         $folderLoc = 'assets/img/foto_gallerij/';
@@ -144,13 +173,23 @@ class ImageController extends Controller
         }
 
         rename($path, $newPath);
-        return $this->requestDirectories($selectedFolder, 'change'); //xxx
+        return $this->requestDirectories($selectedFolder, 'change');
     }
 
-    public function deleteImage(Request $request)
+    public function deleteImage(Request $request) //XXX
     {
         $image = $request->image;
         $selectedFolder = $request->selectedFolder;
+
+
+        // check if is inside the slider array
+        $array = Slider::where('slider_id', 1)->pluck('slider_array')->first();
+        $sliderArray = json_decode($array);
+        $toFind = "/" . $selectedFolder . "/" . $image;
+
+        unset($sliderArray[array_search($toFind, $sliderArray)]);
+
+        Slider::where('slider_id', 1)->update(['slider_array' => json_encode(array_values($sliderArray))]);
 
         $path = $selectedFolder . '/' . $image;
         Storage::disk('foto-gallerij')->delete($path);
@@ -159,12 +198,40 @@ class ImageController extends Controller
 
     public function addToSlider(Request $request)
     {
-        if ($request->checkbox === "on") {
-            $selectedFolder = $request->selectedFolder;
-            $image = $request->image;
+        $array = Slider::where('slider_id', 1)->pluck('slider_array')->first();
+        $sliderArray = json_decode($array);
+        // dd($sliderArray); = array
 
-            
+        $selectedFolder = $request->selectedFolder;
+        $image = $request->image;
+        $desiredImage = ("/" . $selectedFolder . "/" . $image);
+
+        foreach ($sliderArray as $image) {
+            if ($image === $desiredImage) {
+                dd('this item is already inside the slider');
+            }
         }
+
+        // store the image inside the array
+        array_push($sliderArray, $desiredImage);
+        Slider::where('slider_id', 1)->update(['slider_array' => json_encode($sliderArray)]);
+
+        // data is added!, time to redirect
+        return $this->requestDirectories($selectedFolder, 'change');
+    }
+    public function removeFromSlider(Request $request)
+    {
+        // sliderarray
+        $array = Slider::where('slider_id', 1)->pluck('slider_array')->first();
+        $sliderArray = json_decode($array);
+
+        // item to delete
+        $itemsToDelete = $request->deleteFromSlider;
+        $imagesThatStay = array_values(array_diff($sliderArray, $itemsToDelete));
+
+        Slider::where('slider_id', 1)->update(['slider_array' => json_encode($imagesThatStay)]);
+
+        return $this->requestDirectories($request->selectedFolder, 'change');
     }
 
     /**

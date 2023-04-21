@@ -60,5 +60,5 @@
         </div>
 
         {{-- recent projects --}}
-        <x-recent-projects-slider></x-recent-projects-slider>
+        <x-recent-projects-slider :slider="$slider"></x-recent-projects-slider>
 </x-layout>

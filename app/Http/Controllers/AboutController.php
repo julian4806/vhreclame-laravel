@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\File;
 use App\Models\About;
+use App\Models\Slider;
 use App\Models\Section;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
@@ -96,8 +97,11 @@ class AboutController extends Controller
     // RENDER TO THE ACTUAL WEBPAGE
     public function about(): View
     {
+        $sliderArray = json_decode(Slider::where('slider_id', 1)->pluck('slider_array')->first());
+
         return view('about', [
             'data' => About::all(),
+            'slider' => $sliderArray
         ]);
     }
 }
