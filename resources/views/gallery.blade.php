@@ -5,7 +5,7 @@
 
 
         {{-- recent projects --}}
-        <div class="flex items-center justify-center p-6">
+        <div class="flex items-center justify-center p-6 container mx-auto">
             {{-- container --}}
             <div class="w-full h-full p-2 bg-slate-200 flex flex-col items-center gap-4 rounded-md">
                 {{-- header --}}

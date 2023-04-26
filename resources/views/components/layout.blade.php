@@ -14,7 +14,7 @@
 
 <body>
     <x-nav></x-nav>
-    <div class="container mx-auto">
+    <div>
         {{ $slot }}
     </div>
     <x-footer></x-footer>
