@@ -118,7 +118,8 @@
         {{-- recent projects slider --}}
         <form class="bg-slate-300 my-8 p-6" action="/edit-images/remove_from_slider">
             @if ($sliderArray)
-                <div class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die nu in
+                <div class="bg-black text-white text-center p-1 mb-6 select-none font-bold uppercase">Foto's die
+                    nu in
                     "Recente Projecten" te zien zijn</div>
                 <div class="overflow-x-auto py-3 gap-4 flex ">
                     @foreach ($sliderArray as $photo)

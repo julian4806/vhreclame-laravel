@@ -14,8 +14,8 @@ module.exports = {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                blauw: '#033AEB',
-                grijs: '#F1F1F1',
+                "custom-blue": '#033AEB',
+                "custom-gray": '#F1F1F1',
             }
         },
     },

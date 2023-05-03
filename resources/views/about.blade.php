@@ -23,15 +23,15 @@
         </div>
 
         {{-- cards --}}
-        <div class="flex flex-col bg-slate-200 py-12 gap-8">
+        <div class="flex flex-col bg-custom-gray py-12 gap-8">
             <div class="text-center">
                 <h2 class="text-2xl font-bold">Waarom VH Reclame</h2>
             </div>
             <div
                 class="flex flex-col md:flex-row justify-around px-6 gap-10 md:gap-6 mt-8 container mx-auto text-center">
                 {{-- card --}}
-                <div class="py-10 px-4 bg-slate-50 rounded-md flex flex-col gap-2 relative w-full">
-                    <div class="circle"></div>
+                <div class="py-10 px-4 bg-white rounded-md flex flex-col gap-2 relative w-full">
+                    <div class="circle bg-custom-blue"></div>
                     <h2 class="text-xl font-bold">
                         {{ $data[2]->header }}
                     </h2>
@@ -40,8 +40,8 @@
                     </p>
                 </div>
                 {{-- card --}}
-                <div class="py-10 px-4 bg-slate-50 rounded-md flex flex-col gap-2 relative w-full">
-                    <div class="circle"></div>
+                <div class="py-10 px-4 bg-white rounded-md flex flex-col gap-2 relative w-full">
+                    <div class="circle bg-custom-blue"></div>
                     <h2 class="text-xl font-bold">
                         {{ $data[3]->header }}
                     </h2>
@@ -50,8 +50,8 @@
                     </p>
                 </div>
                 {{-- card --}}
-                <div class="py-10 px-4 bg-slate-50 rounded-md flex flex-col gap-2 relative w-full">
-                    <div class="circle"></div>
+                <div class="py-10 px-4 bg-white rounded-md flex flex-col gap-2 relative w-full">
+                    <div class="circle bg-custom-blue"></div>
                     <h2 class="text-xl font-bold">
                         {{ $data[4]->header }}
                     </h2>

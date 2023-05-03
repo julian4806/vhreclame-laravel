@@ -51,6 +51,7 @@
                     <input type="text" class="p-2 rounded-md" placeholder="Uw telefoonnummer">
                     <input type="text" class="p-2 rounded-md" placeholder="Het onderwerp">
                     <textarea name="" id="" cols="30" rows="10" class="p-2 rounded-md" placeholder="Uw bericht"></textarea>
+                    <button class="button bg-custom-blue">Verstuur bericht</button>
                 </div>
                 <div class="hidden md:block w-full bg-slate-200 p-6">
                     <div class="bg-black h-full w-full rounded-md"></div>

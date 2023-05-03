@@ -7,7 +7,7 @@
                 <div class="p-12 md:w-3/4 mx-auto text-center text-white">
                     <h2 class="font-bold text-5xl">{{ $data[0]->header }}</h2>
                     <p class="text-sm mt-3 mb-6">{{ $data[0]->body }}</p>
-                    <a href="/over-ons" class="button">lees meer</a>
+                    <a href="/over-ons" class="button bg-custom-blue">lees meer</a>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="p-6 md:w-3/4 mx-auto text-center">
             <h2 class="font-bold text-2xl">{{ $data[1]->header }}</h2>
             <p class="mt-6 mb-6">{{ $data[1]->body }}</p>
-            <a href="/over-ons" class="button">lees meer</a>
+            <a href="/over-ons" class="button bg-custom-blue">lees meer</a>
         </div>
     </div>
 
