@@ -1,4 +1,6 @@
 /*
+ Navicat Premium Data Transfer
+
  Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 100424
@@ -9,7 +11,7 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 21/04/2023 16:05:13
+ Date: 10/05/2023 20:13:50
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +38,7 @@ CREATE TABLE `abouts`  (
 -- Records of abouts
 -- ----------------------------
 INSERT INTO `abouts` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-03-29 12:22:29');
-INSERT INTO `abouts` VALUES (2, 'Dit is de main!', 'lorem ipsium dorlororo', 'main.jpg', 3, '0000-00-00 00:00:00', '2023-03-29 14:40:57');
+INSERT INTO `abouts` VALUES (2, 'Dit is de main!', 'Onze vader begon in april 1968 voor zichzelf met VH Reclame, een reclamebedrijf. Op dat moment werd winkelcentrum Hoog Catharijne opgeleverd en was hij dagelijks druk om de winkels daar te voorzien van lichtreclames en andere gevelreclames. In april 2003 namen wij als gebroeders van Husen het stokje over en zijn inmiddels alweer bijna 20 jaar druk met VH Reclame. Kortom, ervaring genoeg om u te kunnen helpen!', 'main.jpg', 3, '0000-00-00 00:00:00', '2023-04-26 15:01:03');
 INSERT INTO `abouts` VALUES (3, 'dit is card 1 lorem', 'dit is card 1 loremdit is card 1 loremdit is card 1 lorem', '', 4, '0000-00-00 00:00:00', '2023-03-29 12:18:59');
 INSERT INTO `abouts` VALUES (4, 'dit is een card2', 'dit is een card31232323', '', 4, '0000-00-00 00:00:00', '2023-03-29 12:18:50');
 INSERT INTO `abouts` VALUES (5, 'de laatste card', 'de laatste cardde laatste cardde laatste cardde laatste cardde laatste cardde laatste cardde laatste card', '', 5, '0000-00-00 00:00:00', '2023-03-29 12:19:13');
@@ -107,7 +109,7 @@ CREATE TABLE `galleries`  (
 -- ----------------------------
 -- Records of galleries
 -- ----------------------------
-INSERT INTO `galleries` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-03-29 14:36:54');
+INSERT INTO `galleries` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-05-03 13:12:19');
 
 -- ----------------------------
 -- Table structure for homes
@@ -129,8 +131,8 @@ CREATE TABLE `homes`  (
 -- ----------------------------
 -- Records of homes
 -- ----------------------------
-INSERT INTO `homes` VALUES (1, 'jup dat werkt ZEKER!', 'dit is een tekstje', 'header.jpg', 2, '0000-00-00 00:00:00', '2023-03-29 14:36:38');
-INSERT INTO `homes` VALUES (2, 'watttt', 'LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM', '', 2, '0000-00-00 00:00:00', '2023-03-29 12:23:49');
+INSERT INTO `homes` VALUES (1, 'VHReclame 1968', 'Onze vader begon in april 1968 voor zichzelf met VH Reclame, een reclamebedrijf.', 'header.jpg', 2, '0000-00-00 00:00:00', '2023-05-03 13:11:10');
+INSERT INTO `homes` VALUES (2, 'Wie zijn wij?', 'Reclame is uw visitekaartje. Hoe wilt u uw bedrijf presenteren? Of makkelijk vindbaar maken?\r\n\r\nOf het nu gaat om autobelettering, bewegwijzering, gevelreclame, full-color prints, lichtreclame en nog heel veel meer, met een expertise van ruim 50 jaar bent u bij ons aan het goede adres. Neem contact met ons op voor een vrijblijvend advies.', '', 2, '0000-00-00 00:00:00', '2023-04-26 14:46:36');
 
 -- ----------------------------
 -- Table structure for images
@@ -247,7 +249,7 @@ CREATE TABLE `sliders`  (
 -- ----------------------------
 -- Records of sliders
 -- ----------------------------
-INSERT INTO `sliders` VALUES (1, 1, '[\"\\/algemene lett\\/HALLOHALLOHALLO.jpg\",\"\\/algemene lett\\/foto3.jpg\",\"\\/algemene lett\\/landscape.jpg\",\"\\/algemene lett\\/landscape2.jpg\",\"\\/banners vlaggen\\/second added.jpg\",\"\\/banners vlaggen\\/test.png\",\"\\/banners vlaggen\\/test2.png\"]', NULL, '2023-04-21 14:04:39');
+INSERT INTO `sliders` VALUES (1, 1, '[\"\\/algemene lett\\/foto3.jpg\",\"\\/banners vlaggen\\/landscape2.jpg\",\"\\/banners vlaggen\\/Balgekte.png\",\"\\/banners vlaggen\\/Dikke_henk.jpg\",\"\\/banners vlaggen\\/foto3.jpg\"]', NULL, '2023-05-03 13:18:51');
 
 -- ----------------------------
 -- Table structure for users
@@ -269,6 +271,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', 'GqlMys3Pl9n5Kte6RIhMmYh1LZ10Y3Xu71g1fyRzWBiA3bFmwvH52rAPOR46', '2023-03-29 11:13:02', '2023-03-29 11:13:02');
+INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', 'Dvw3bQHXF7u718jX0Y7QIHCdA0JBX29z5Ga3qbTadDd8pUdzrWfDYcrRH8kj', '2023-03-29 11:13:02', '2023-03-29 11:13:02');
 
 SET FOREIGN_KEY_CHECKS = 1;
