@@ -26,7 +26,7 @@
                             </select>
                         </form>
                     </div>
-                    <h2 class="text-xl p-2 bg-white rounded-2xl">{{ $selected_category }}</h2>
+                    <h2 class="text-xl p-2 bg-white rounded-2xl font-bold">{{ $selected_category }}</h2>
                     <div class="flex-1"></div>
                 </div>
                 <div id="mygallery">

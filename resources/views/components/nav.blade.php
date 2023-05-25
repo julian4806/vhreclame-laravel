@@ -3,7 +3,7 @@
     <div class="container flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-8 text-lg top-0 mx-auto">
         <div>
             <a href="#" class="text-2xl text-white">
-                <span class="bg-white p-1 rounded-lg h-12 object-contain drop-shadow-sm text-black"
+                <span class="bg-white p-1 rounded-lg h-12 object-contain drop-shadow-sm text-black font-bold"
                     alt="">VHReclame</span>
             </a>
         </div>
