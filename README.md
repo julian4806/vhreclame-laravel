@@ -56,3 +56,15 @@ php artisan serve
 ```
 npm run dev
 ```
+
+## Hoe log je in op de achterkant van de website?
+
+Om in te loggen op de achterkant van de website navigeer je naar: http://127.0.0.1:8000/login.
+De inloggegevens zijn:
+
+```
+test@test.nl
+test1234
+```
+
+navigeer naar http://127.0.0.1:8000/register om een nieuw account aan te maken.
