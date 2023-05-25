@@ -34,7 +34,15 @@ composer install
 npm install
 ```
 
-#### Stap 4, hermoem de .env.example naar .env en zet je database gegevens erin.
+#### Stap 4, maak een database aan en importeer het SQL bestand.
+
+-   Ga naar http://localhost/phpmyadmin/
+-   Maak een database aan
+-   Ga naar importeren
+-   Kies het dump.sql bestand dat staat in de SQL_DUMP folder
+-   Scroll naar beneden en klik op 'importeren'
+
+#### Stap 5, hermoem de .env.example naar .env en zet je database gegevens erin.
 
 voorbeeld:
 
@@ -47,7 +55,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-#### Stap 5, Als het goed is kun je nu aan de slag. Voer deze twee commando's uit in verschillende terminals.
+#### Stap 6, Als het goed is kun je nu aan de slag. Voer deze twee commando's uit in verschillende terminals.
 
 ```
 php artisan serve
@@ -56,6 +64,8 @@ php artisan serve
 ```
 npm run dev
 ```
+
+#### Stap 7, Open http://127.0.0.1:8000/ op je browser en klik op 'GENERATE APP KEY', ververs hierna de browser.
 
 ## Hoe log je in op de achterkant van de website?
 
