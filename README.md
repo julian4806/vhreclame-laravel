@@ -14,6 +14,10 @@ Deze website bevat een volledig CRUD systeem voor het beheren van:
 
 #### Stap 1, Clone de Repository
 
+```
+git clone https://github.com/julian4806/vhreclame-laravel
+```
+
 #### Stap 2, navigeer naar de gekloonde folder
 
 ```
@@ -31,7 +35,9 @@ npm install
 ```
 
 #### Stap 4, hermoem de .env.example naar .env en zet je database gegevens erin.
+
 voorbeeld:
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -42,6 +48,7 @@ DB_PASSWORD=
 ```
 
 #### Stap 5, Als het goed is kun je nu aan de slag. Voer deze twee commando's uit in verschillende terminals.
+
 ```
 php artisan serve
 ```
