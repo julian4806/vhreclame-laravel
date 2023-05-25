@@ -36,6 +36,7 @@ npm install
 
 #### Stap 4, maak een database aan en importeer het SQL bestand.
 
+-   Start MySQL en Apache in XAMPP
 -   Ga naar http://localhost/phpmyadmin/
 -   Maak een database aan
 -   Ga naar importeren
