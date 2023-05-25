@@ -247,7 +247,7 @@ CREATE TABLE `sliders`  (
 -- ----------------------------
 -- Records of sliders
 -- ----------------------------
-INSERT INTO `sliders` VALUES (1, 1, '[\"\\/1plotter teksten\\/PT 6.jpg\",\"\\/1plotter teksten\\/wallpaper.jpg\",\"\\/1plotter teksten\\/pngtest.png\"]', NULL, '2023-05-25 07:24:38');
+INSERT INTO `sliders` VALUES (1, 1, '[\"\\/test\\/wallpaper.jpg\"]', NULL, '2023-05-25 10:29:58');
 
 -- ----------------------------
 -- Table structure for users
