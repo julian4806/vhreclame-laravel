@@ -1,17 +1,15 @@
 /*
- Navicat Premium Data Transfer
-
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100424
+ Source Server Version : 100427
  Source Host           : localhost:3306
  Source Schema         : vhreclame_vanilla_laravel
 
  Target Server Type    : MySQL
- Target Server Version : 100424
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 10/05/2023 20:13:50
+ Date: 25/05/2023 10:51:13
 */
 
 SET NAMES utf8mb4;
@@ -38,10 +36,10 @@ CREATE TABLE `abouts`  (
 -- Records of abouts
 -- ----------------------------
 INSERT INTO `abouts` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-03-29 12:22:29');
-INSERT INTO `abouts` VALUES (2, 'Dit is de main!', 'Onze vader begon in april 1968 voor zichzelf met VH Reclame, een reclamebedrijf. Op dat moment werd winkelcentrum Hoog Catharijne opgeleverd en was hij dagelijks druk om de winkels daar te voorzien van lichtreclames en andere gevelreclames. In april 2003 namen wij als gebroeders van Husen het stokje over en zijn inmiddels alweer bijna 20 jaar druk met VH Reclame. Kortom, ervaring genoeg om u te kunnen helpen!', 'main.jpg', 3, '0000-00-00 00:00:00', '2023-04-26 15:01:03');
-INSERT INTO `abouts` VALUES (3, 'dit is card 1 lorem', 'dit is card 1 loremdit is card 1 loremdit is card 1 lorem', '', 4, '0000-00-00 00:00:00', '2023-03-29 12:18:59');
-INSERT INTO `abouts` VALUES (4, 'dit is een card2', 'dit is een card31232323', '', 4, '0000-00-00 00:00:00', '2023-03-29 12:18:50');
-INSERT INTO `abouts` VALUES (5, 'de laatste card', 'de laatste cardde laatste cardde laatste cardde laatste cardde laatste cardde laatste cardde laatste card', '', 5, '0000-00-00 00:00:00', '2023-03-29 12:19:13');
+INSERT INTO `abouts` VALUES (2, 'Over Ons Header', 'Over Ons Description', 'main.jpg', 3, '0000-00-00 00:00:00', '2023-05-25 08:38:27');
+INSERT INTO `abouts` VALUES (3, 'Card 1 Header', 'Card 1 Desc', '', 4, '0000-00-00 00:00:00', '2023-05-25 08:38:44');
+INSERT INTO `abouts` VALUES (4, 'Card 2 Header', 'Card 2 Desc', '', 4, '0000-00-00 00:00:00', '2023-05-25 08:38:55');
+INSERT INTO `abouts` VALUES (5, 'Card 3 Header', 'Card 3 Header', '', 5, '0000-00-00 00:00:00', '2023-05-25 08:39:08');
 
 -- ----------------------------
 -- Table structure for contacts
@@ -64,10 +62,10 @@ CREATE TABLE `contacts`  (
 -- Records of contacts
 -- ----------------------------
 INSERT INTO `contacts` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-03-29 12:22:52');
-INSERT INTO `contacts` VALUES (2, '', 'VHRECLAME\r\ndit is wat extra text\r\nhartstikke tof', '', 3, '0000-00-00 00:00:00', '2023-03-29 12:23:08');
-INSERT INTO `contacts` VALUES (3, 'email', 'vhreclame@test.nl', '', 5, '0000-00-00 00:00:00', '2023-03-29 11:31:28');
-INSERT INTO `contacts` VALUES (4, 'telefoon', '0682004068 / 0682004068 / 0682004068', '', 5, '0000-00-00 00:00:00', '2023-03-29 12:23:21');
-INSERT INTO `contacts` VALUES (5, 'mail', '4asd@', '', 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `contacts` VALUES (2, '', 'Contact Credentials Header', '', 3, '0000-00-00 00:00:00', '2023-05-25 08:40:26');
+INSERT INTO `contacts` VALUES (3, 'email', 'vhreclame@test.nl', '', 5, '0000-00-00 00:00:00', '2023-05-25 08:46:19');
+INSERT INTO `contacts` VALUES (4, 'telefoon', '06822332333', '', 5, '0000-00-00 00:00:00', '2023-05-25 08:46:47');
+INSERT INTO `contacts` VALUES (5, 'adres', 'treinstation 33', '', 5, '0000-00-00 00:00:00', '2023-05-25 08:46:40');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -109,7 +107,7 @@ CREATE TABLE `galleries`  (
 -- ----------------------------
 -- Records of galleries
 -- ----------------------------
-INSERT INTO `galleries` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-05-03 13:12:19');
+INSERT INTO `galleries` VALUES (1, '', '', 'navigation.jpg', 1, '0000-00-00 00:00:00', '2023-03-29 14:36:54');
 
 -- ----------------------------
 -- Table structure for homes
@@ -131,8 +129,8 @@ CREATE TABLE `homes`  (
 -- ----------------------------
 -- Records of homes
 -- ----------------------------
-INSERT INTO `homes` VALUES (1, 'VHReclame 1968', 'Onze vader begon in april 1968 voor zichzelf met VH Reclame, een reclamebedrijf.', 'header.jpg', 2, '0000-00-00 00:00:00', '2023-05-03 13:11:10');
-INSERT INTO `homes` VALUES (2, 'Wie zijn wij?', 'Reclame is uw visitekaartje. Hoe wilt u uw bedrijf presenteren? Of makkelijk vindbaar maken?\r\n\r\nOf het nu gaat om autobelettering, bewegwijzering, gevelreclame, full-color prints, lichtreclame en nog heel veel meer, met een expertise van ruim 50 jaar bent u bij ons aan het goede adres. Neem contact met ons op voor een vrijblijvend advies.', '', 2, '0000-00-00 00:00:00', '2023-04-26 14:46:36');
+INSERT INTO `homes` VALUES (1, 'Home Page Header', 'Home Page Text', 'header.jpg', 2, '0000-00-00 00:00:00', '2023-05-25 08:37:13');
+INSERT INTO `homes` VALUES (2, 'Content Header', 'Content Description', '', 2, '0000-00-00 00:00:00', '2023-05-25 08:37:26');
 
 -- ----------------------------
 -- Table structure for images
@@ -249,7 +247,7 @@ CREATE TABLE `sliders`  (
 -- ----------------------------
 -- Records of sliders
 -- ----------------------------
-INSERT INTO `sliders` VALUES (1, 1, '[\"\\/algemene lett\\/foto3.jpg\",\"\\/banners vlaggen\\/landscape2.jpg\",\"\\/banners vlaggen\\/Balgekte.png\",\"\\/banners vlaggen\\/Dikke_henk.jpg\",\"\\/banners vlaggen\\/foto3.jpg\"]', NULL, '2023-05-03 13:18:51');
+INSERT INTO `sliders` VALUES (1, 1, '[\"\\/1plotter teksten\\/PT 6.jpg\",\"\\/1plotter teksten\\/wallpaper.jpg\",\"\\/1plotter teksten\\/pngtest.png\"]', NULL, '2023-05-25 07:24:38');
 
 -- ----------------------------
 -- Table structure for users
@@ -271,6 +269,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', 'Dvw3bQHXF7u718jX0Y7QIHCdA0JBX29z5Ga3qbTadDd8pUdzrWfDYcrRH8kj', '2023-03-29 11:13:02', '2023-03-29 11:13:02');
+INSERT INTO `users` VALUES (1, 'test', 'test@test.nl', NULL, '$2y$10$Fmw9fXOuEegNyDXGZVQiFudSG/eUJ/O8RlpyRrv.uH31jRhMGSVNO', 'GqlMys3Pl9n5Kte6RIhMmYh1LZ10Y3Xu71g1fyRzWBiA3bFmwvH52rAPOR46', '2023-03-29 11:13:02', '2023-03-29 11:13:02');
 
 SET FOREIGN_KEY_CHECKS = 1;
